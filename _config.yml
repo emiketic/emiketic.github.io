@@ -1,30 +1,62 @@
 # Site settings
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
-url: 'http://joshgerdes.com/jekyll-uno'
-baseurl: '/jekyll-uno/'
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+title: "EMIKETIC"
+description: 'EMIKETIC is a team of passionate programmers who fancy real-time and distributed application development. We write her about Meteor, React, modern JavaScript, Elixir, Phoenix and Ruby on Rails.'
+url: "http://blog.emiketic.com" # the base hostname & protocol for your site
+baseurl: "/"
+locale: en_US
+timezone: Africa/Tunis
 
+email: contact@emiketic.com
+#blog logo
+logo: "/assets/images/logo.jpg"
+# blog cover
+cover: "/assets/images/cover-1.jpg"
+
+name: 'EMIKETIC'
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  facebook:     emiketic
+  twitter:      emiketic
+  google_plus:  emiketic
+fb_admins:      662785061
+fb_appid:       966242223397117
 
-defaults:
-  -
-    scope:
-      path: ''
-      type: 'posts'
-    values:
-        layout: 'post'
+# Social media
+author:
+  name: 'EMIKETIC Technologies'
+  email: contact@emiketic.com
+  twitter_username: emiketic
+  facebook_username: emiketic
+  github_username:  emiketic
+  linkedin_username:  emiketic
+
+# Article authors (backward compatibility)
+authors:
+  mustapha:
+    name: Mustapha Turki
+    image: "images/authors/mustapha.jpg"
+    website: "https://stoufa88.github.io"
+
+  mehdi:
+    name: Mehdi Mahmoudi
+    image: "images/authors/mehdi.jpg"
+    website: "https://github.com/MehdiMahmoudi"
+    twitter: "https://twitter.com/MehdiMahmoudi"
+
+  chourouk:
+    name: Chourouk Mrad
+    image: "images/authors/chourouk.jpg"
+    website: "http://www.emiketic.com"
+
+  sabrine:
+    name: Sabrine Abdelghani
+    image: "images/authors/sabrine.jpg"
+    website: "https://twitter.com/sabrine_abdgani"
+
 
 # Build settings
 destination: _site
 paginate: 10
+future: true
 permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
@@ -35,5 +67,41 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
-gems: ['jekyll-paginate']
+# Pagination settings
+gems: [jekyll-paginate]
+paginate_path: "page:num"
+paginate:	5
+
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/emiketic
+    desc: Follow us on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
+
+  - icon:	facebook
+    url:	https://facebook.com/emiketic
+    desc: Follow us on Facebook
+    share_url: //www.facebook.com/sharer.php
+    share_title: ?t=
+    share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/emiketic
+    desc:	Follow us on GitHub
+    share_url:
+    share_title:
+    share_link:
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

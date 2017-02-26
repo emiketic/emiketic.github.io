@@ -1,6 +1,14 @@
 @import url(uno.css);
 @import url(monokai.css);
 
+.author-avatar {
+  max-width: 2em;
+  height: auto;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 1%;
+}
+
 /* Modifications */
 
 pre.highlight,
@@ -13,7 +21,7 @@ pre.highlight code,
   white-space: pre-wrap;
 }
 
-.btn, 
+.btn,
 .navigation__item a {
   margin: 5px 0;
   white-space: nowrap;
