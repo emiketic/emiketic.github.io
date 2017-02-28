@@ -1,6 +1,6 @@
 # Site settings
 title: "EMIKETIC"
-description: 'EMIKETIC is a team of passionate programmers who fancy real-time and distributed application development. We write her about Meteor, React, modern JavaScript, Elixir, Phoenix and Ruby on Rails.'
+description: 'EMIKETIC is a team of passionate programmers who fancy real-time and distributed application development. We write here about Meteor, React, modern JavaScript, Elixir, Phoenix and Ruby on Rails.'
 url: "http://blog.emiketic.com" # the base hostname & protocol for your site
 baseurl: "/"
 locale: en_US
