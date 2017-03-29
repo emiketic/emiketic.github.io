@@ -3,7 +3,7 @@ layout: post
 title:  "Hands On with the New Meteor 1.3"
 author: mehdi
 date:   2016-04-02 12:09:00
-categories: web
+categories: meteor
 tags: meteor npm es2015 es6 mochajs
 image: /assets/article_images/2016-04-01-hands-on-with-meteor-1-3-release/emiketic-hands-on-meteor-1-3.jpg
 ---

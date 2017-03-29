@@ -3,7 +3,7 @@ layout: post
 title:  "Using Rails Variants for Custom Device Templating and Localization"
 author: mehdi
 date:   2015-12-06 21:21:25
-categories: web
+categories: rails
 tags: localization rails responsiveness mobile
 image: /assets/article_images/2015-12-06-using-rails-variants-for-custom-device-templating-and-localisation/people-train-rails-localization-variants.jpg
 ---

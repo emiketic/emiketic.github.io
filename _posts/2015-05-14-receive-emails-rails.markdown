@@ -3,7 +3,7 @@ layout: post
 title:  "Receiving emails in ruby on rails applications"
 author: mustapha
 date:   2015-05-14 11:21:25
-categories: web
+categories: rails
 tags: regular email inbox rails
 image: /assets/article_images/2015-05-14-receive-emails-rails/desktop.jpg
 ---

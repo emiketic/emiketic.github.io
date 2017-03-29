@@ -3,8 +3,8 @@ layout: post
 title:  "Create your own download manager using Node.js"
 author: mustapha
 date:   2016-05-04 11:21:25
-categories: web
-tags: node downloads albums javascript
+categories: nodejs
+tags: nodejs downloads albums javascript
 image: /assets/article_images/2016-05-04-create-your-own-download-manager/e.jpg
 ---
 
