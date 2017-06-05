@@ -7,16 +7,13 @@ categories: react
 tags: emiketic wheritics startup
 ---
 
-Genesis
----
-
 When EMIKETIC was first started in 2014, all we knew is that we loved Ruby on Rails. We wished to bring its agility and clarity to small and medium businesses. Which came true to a certain extent.
 Then we were introduced to the magic of modern JavaScript and the real-time capabilities it was offering. Falling in love with Meteor and React was utter fate and an ineluctable pleasant choice :)
 
 Early on, following the almighty principles of the lean mindset, we made the decision to stick to a reduced set of technologies, namely those 2 stacks. Which brought us to focus more on the *know-how* than the *how*.
 What followed could only make us proud. In less than two years, EMIKETIC had become an agency with a proven expertise in delivering real solutions to real world problems in real time. As an agency, this was our long sought-after DNA and will always be.
 
-Wheritics
+Genesis
 ---
 In October 2015, we started working on a prototype for a friend who had a problem in mind to solve. The prototype in question involved the usage of a technology that was new to us: iBeacons, also known as BLE (Bluetooth Low Energy) beacon devices.
 
