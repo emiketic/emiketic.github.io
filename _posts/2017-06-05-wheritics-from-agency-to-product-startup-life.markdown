@@ -20,7 +20,7 @@ In October 2015, we started working on a prototype for a friend who had a proble
 This prototype quickly became a structured idea, a platform, then a business opportunity and eventually a startup: [Wheritics](http://www.wheritics.com).
 
 The idea is simple: How can we locate occupants in a building in case of an emergency and for their safety? How can we do the same for valuable assets? How can we scale the solution to a large number of buildings 24/7?
-It all made sense to us because we were already a team of real-time enthusiasts, fancying architectural challenges yet in love with simple and minimalist design patterns. *Carpe Die!*
+It all made sense to us because we were already a team of real-time enthusiasts, fancying architectural challenges yet in love with simple and minimalist design patterns. *Carpe Diem!*
 
 Nonetheless, if you're still curious in regards with the solution of the problem mentioned above, visit our website or even better, come hear us pitching! :)
 
