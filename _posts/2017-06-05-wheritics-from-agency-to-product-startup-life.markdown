@@ -28,7 +28,7 @@ Welcome to startup land!
 ---
 With Wheritics we learnt so much in such a short amount of time. We were literally thrown in the realm of an unclear *proximity* IoT eco-system (and we're being nice here by narrowing this madness down only to the "proximity" category). We learnt that while funding was still baking in the oven, you need to balance your revenue streams wisely. We learnt what the true measure of risk and uncertainty actually meant at our scale.
 
-But we also discovered new significances for the words **fun**, **team work** and appetite for **innovation**. Things went so fast and the project got under the spotlights in different countries. We even made it to the finalists list for the [BloomMasters](http://www.bloommasters.tn/) contest, finalists in [Seedstars Tunisia](https://www.wamda.com/2017/05/seedstars-pushes-tunisian-startups-to-scale-more) and were selected to exhibit at [Vivatechnology](https://vivatechnology.com/). Always while having more and more fun!
+But we also discovered new significances for the words **fun**, **team work** and appetite for **innovation**. Things went so fast and the project got under the spotlights in different countries. We already secured an influential early-adopter. We even made it to the finalists list for the [BloomMasters](http://www.bloommasters.tn/) contest, finalists in [Seedstars Tunisia](https://www.wamda.com/2017/05/seedstars-pushes-tunisian-startups-to-scale-more) and were selected to exhibit at [Vivatechnology](https://vivatechnology.com/). Always while having more and more fun!
 
 The future of EMIKETIC and Wheritics
 ---
