@@ -4,7 +4,7 @@ title:  "New EMIKETIC Tunis offices and team"
 author: mehdi
 date:   2017-06-05 17:35:00
 categories: react
-tags: emiketic wheritics startup
+tags: emiketic office agency tunis
 ---
 
 We've been working on and dreaming of this for a while. Although EMIKETIC started as a little Ruby on Rails adventure in the small coastal city of Nabeul, Tunisia, we've always sought to share our vision that great software can, and sometimes *have* to, be done outside of major city hubs.
