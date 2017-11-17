@@ -5,13 +5,27 @@ layout: default
 <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <div class="post-list__meta"><time datetime="{{ page.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ page.date | date: "%-d %b %Y" }}</time> &#8226; <span class="post-meta__tags">on {% for tag in page.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span><span class="post-meta__tags">by <a href="{{ author.website }}">{{ author.name }}</a></span> <a href="{{ author.website }}"><img class="author-avatar" src="{{ site.baseurl }}{{ author.image }}"></a> </div>
+      <div class="post-list__meta">
+        <time datetime="{{ page.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ page.date | date: "%-d %b %Y" }}</time>
+         &#8226; 
+         <span class="post-meta__tags">on {% for tag in page.tags %}
+           <a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}
+         </span>
+      </div>
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
   <section class="post">
     {{ content }}
+  </section>
+  <section class="post-author">
+      <h4>
+          <a href="{{ author.website }}">{{ author.name }}</a></span> <a href="{{ author.website }}"><img class="author-avatar" src="{{ site.baseurl }}{{ author.image }}"></a>
+      </h4>
+      <p class="post-meta__tags post-author-bio">
+          {{ author.bio }}
+      </p>
   </section>
   {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
 </article>

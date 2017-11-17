@@ -38,8 +38,9 @@ authors:
 
   mehdi:
     name: Mehdi Mahmoudi
+    bio: "Aka Medi The Jedi. Electrical engineer and scuba diving instructor. Loves Meteor, React and Rails. Agency founder. Startup co-founder and CTO."
     image: "images/authors/mehdi.jpg"
-    website: "https://github.com/MehdiMahmoudi"
+    website: "https://www.linkedin.com/in/mehdimahmoudi/"
     twitter: "https://twitter.com/MehdiMahmoudi"
 
   chourouk:
@@ -49,8 +50,17 @@ authors:
 
   sabrine:
     name: Sabrine Abdelghani
+    bio: "Full-stack JavaScript developer. JS girl. Fond of Meteor, React and React Native"
     image: "images/authors/sabrine.jpg"
     website: "https://twitter.com/sabrine_abdgani"
+
+  nader:
+    name: Nader Toukabri
+    bio: "Some sort of software engineer."
+    image: "images/authors/mehdi.jpg"
+    github: "https://github.com/naderio"
+    website: "https://nader.tech/"
+    twitter: "https://twitter.com/naderbri"
 
 
 # Build settings
