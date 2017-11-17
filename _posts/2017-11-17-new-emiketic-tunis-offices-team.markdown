@@ -2,8 +2,8 @@
 layout: post
 title:  "New EMIKETIC Tunis offices and team"
 author: mehdi
-date:   2017-06-05 17:35:00
-categories: react
+date:   2017-11-17 18:23:00
+categories: company
 tags: emiketic office agency tunis
 ---
 
