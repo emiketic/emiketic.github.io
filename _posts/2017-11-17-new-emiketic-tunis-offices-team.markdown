@@ -45,7 +45,7 @@ On the technology and process level, we go by the French adage of *you don't swa
 [Ruby on Rails](http://rubyonrails.org/) has proven to be immensely powerful for mitigating project management risks, while bringing the right conventions, tools and standards out of the box. 
 [Meteor](http://www.meteor.com) is a bit of a Rails for an ever mutating JavaScript universe :)
 
-React is becoming more than a library, and even an industry we unshakably believe in.
+React is becoming more than a library, and even an industry we're determined to embrace further.
 
 Join the adventure!
 ---
