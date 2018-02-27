@@ -2,31 +2,33 @@
 layout: post
 title:  "Server Side Pagination, using React, Redux and Ant Design"
 author: oumayma
-date:   2017-02-26 11:20:00
+date:   2018-02-27 11:20:00
 categories: react
 tags: react redux ant-design
 ---
 
-Let's give the fact that fetching a quite long list of users from an API and displaying them in a list view is relatively not useful especially for large sets of data.
+![Server Side Pagination, using React, Redux and Ant Design](/assets/article_images/2018-02-27-implementing-pagination-using-react-redux/redux-react-antd-pagination.png)
 
-The main handicap of this idea would be an unlimited scroll down list which is definitely a bad design.
+Let's be straightforward: Fetching a quite long list of users (or other entity) from an API and displaying them in a list view is relatively not useful especially for large sets of data.
 
-Server side pagination seems useful to solve this matter. It transfers to the client a much smaller data to handle. So it provides the possibility to specify `the number of data` to retrieve per page and `the page number`.
+The main handicap of this idea would be an unlimited scroll down list which is definitely a bad design. Plus sinking the client with data.
 
-Like a substantial number of APIs supports this control, there are also a large number of APIs that does not this job as well.
+Server side pagination seems useful to solve this matter. It transfers to the client a much smaller data to handle. So it provides the possibility to specify `the number of data sub-sets` to retrieve per page and for a given `page number`.
 
-In our blog post, we are counting on exposing two different solutions :
+Although a substantial number of APIs do support serving data in this fashion, there are also a considerable number of them that don't.
 
-- **Server side pagination**  while the API supports it.
+In our blog post, we are exposing two different solutions :
 
-- **Client side pagination** while not.
+- **Server side pagination** assuming an API that supports it.
 
-using [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Ant Design](https://ant.design/) and taking the example of loading users from a `Restful` API.
+- **Client side pagination** without pagination, that is full data transfer.
 
-Let's dive in !
+At EMIKETIC, we use [React](https://reactjs.org/) with the [Redux](https://redux.js.org/) architecture combined with [Ant Design](https://ant.design/). We will be showcasing this post with this stack along with a example loading users from a `Restful` API.
+
+Let's dive in!
 ---
 
-As in Redux, all the application state is stored as a single object.Let's define, first of all, the substate `User` ( refers to user component) in order to store rendered data and pagination states.
+As the Redux mantra prescribes it, all the application state is stored as a single object in a store. First of all, let's define a sub-state we will call `User` ( refers to user component) in order to store rendered data and pagination states.
 
 **User component substate**
 ``` javascript
@@ -50,7 +52,7 @@ First Approach: Server-side pagination
 ---
 
 This approach is used only when the API supports sending pagination parameters to receive a much smaller amount of data.
-Using Redux, we have to define action types, action creators and thunks to make all happen.
+Using Redux, we have to define action types, action creators and thunks to make it all happen.
 
 **Action Types and Action Creators to load users**
 
@@ -201,10 +203,10 @@ function reducer(
   }
 }
 ```
-**Use**
+**Wiring to the view**
 
-We used all defined actions in a react component called `UserIndexView` connected to store thanks to `react-redux` npm module.
-In this component, we used the component [Table](https://ant.design/components/table/) of `Ant Design` which contains the configurable property [Pagination](https://ant.design/components/pagination/). The properties of `pagination` responsible of changing the pagination state are:
+We used all defined actions in a react component called `UserIndexView` connected to the store thanks to `react-redux` npm module.
+In this component, we used the component [Table](https://ant.design/components/table/) from `Ant Design` which contains the configurable property [Pagination](https://ant.design/components/pagination/). The properties of `pagination` responsible of changing the pagination state are:
 
 * **onShowSizeChange** : the action creator `$pageSize` is dispatched once the pageSize is changed.
 
@@ -291,9 +293,9 @@ Second Approach:  Client-side pagination
 ---
 
 In this part, we are going to mention just the trick that differentiates the `Client-side pagination` from `Server-side pagination`.
-As the API does not supply to send parameters and load the whole data, we will be compelled to load all data and update pagination options based on our stored state and dispatch actions using Redux.
+As the API does not supply the filtering parameters to send from the client and loads instead the whole data, we will need to load all the data and update pagination options based on our stored state and dispatch actions using Redux.
 
-In the main component `UserIndexView` already defined, we definitely have any difference, also in all actions creators. Just we have two small differences in `thunk action creator` and `reducer` that will be mentioned in the two pieces of code:
+In the main component `UserIndexView` already defined, we definitely have no differences, just as we don't in all actions creators. There are only two small differences in `thunk action creator` and `reducer` which will be mentioned in the two pieces of code:
 
 **Thunk action creator**
 ```javascript
@@ -333,4 +335,4 @@ case USER_INDEX_SUCCESS:
 Conclusion
 ---
 
-The purpose of this blog post is to highlight the importance of using pagination even if the restful API we are using does not provide it, and the important use of Redux to manage the whole mechanism.
+The purpose of this blog post is to highlight the importance of using pagination even if the restful API we are using does not provide it, and the important role that Redux plays in managing and organizing the whole mechanism.
