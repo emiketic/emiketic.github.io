@@ -7,7 +7,7 @@ categories: react
 tags: react react-native es6 javascript sendBird
 image: /assets/article_images/2016-05-04-create-your-own-download-manager/e.jpg
 ---
-Sending messages with apps has become a worldwide top use on mobile device and  messaging applications have becaming more ubiquitous.
+Sending messages with apps has become a worldwide top use on mobile device and  messaging applications have became more ubiquitous.
 
 In this blog post, we will share with you our experience with messaging applications.
 
@@ -128,7 +128,6 @@ export default class LoginScreen extends Component<Props> {
 }
 ```
 `connect()` aims at returning a plain JavaScript object describing the user profile.
-<!-- could be used to  identifie user -->
 
 
 ![Image of SendBird Dashboard](/assets/article_images/2018-02-16-sendbird-for-building-react-native-messaging-apps/sendbird-connection.png)
@@ -180,6 +179,67 @@ export default class HomeScreen extends Component<Props> {
                 ))}
             </List>
         </Content>
+      </Container>
+    );
+  }
+}
+
+```
+let's  write our function _.joinChannel()
+
+``` javascript
+ _joinChannel(receiverId) {
+    const sb = SendBird.getInstance();
+    const self = this;
+    sb.GroupChannel.createChannelWithUserIds([receiverId],
+      true, (createdChannel, error) => {
+        if (error) {
+          console.error(error);
+        } else {
+          self.props.navigation.navigate('Chat', { channel: createdChannel });
+        }
+    });
+  }
+
+```
+```javascript 
+
+import React, { Component } from 'react';
+
+import { Container } from 'native-base';
+
+import SendBird from 'sendbird';
+
+type Props = {};
+
+export default class ChatScreen extends Component<Props> {
+  state= {
+     messageList: [],
+  }
+  componentDidMount(){
+    const { channel }  = this.props.navigation.state.params;
+    this.getChannelMetaData(channel);
+  }
+  getChannelMetaData(channel) {
+    if (channel) {
+      const self = this;
+      const messageListQuery = channel.createPreviousMessageListQuery();
+      messageListQuery.load(30, true, (messageList, error) => {
+        if (error) {
+          console.error(error);
+        }
+        console.log(messageList)
+        this.setState({ 
+          messageList,
+        });
+      });
+    }
+    return;
+  }
+  render() {
+    return (
+      <Container>
+         
       </Container>
     );
   }
