@@ -13,10 +13,9 @@ In this blog post, we will share with you our experience with messaging applicat
 
 Messaging is no longer a medium nor just a feature, it's a realm of large tech companies. It does beg the question, Should I build my own feature, in-house development or integrate a 3rd party solution ?
 
-Generally, teams prefer to use off-the-shelf messaging SDK solution. It's the best way to reduce time consuming, increase perfermance and focus other core content. This is why we used SendBird, It's really a scalable, powerful and fully-documented chat API. It helps you to quickly add a real-time chat to any app. This API is rich in features. You can find what you really need and more.
+Generally, teams prefer to use off-the-shelf messaging SDK solution. It's the best way to reduce time consuming, increase perfermance and focus other core content. This is why we used SendBird, It's really a scalable, powerful and fully-documented chat API. It helps you to quickly add a real-time chat to any app. 
 
-
-let's discover this amazing API and Follow the initial step towards getting how everything fits together.
+This API is rich in features. You can find what you really need and more. Let's discover this amazing API and Follow the initial step towards getting how everything fits together.
 
 We'll build a simple messaging app using React Native with SendBird's JavaScript SDK.
 
@@ -114,7 +113,7 @@ export default class LoginScreen extends Component<Props> {
                 if (error) {
                     console.log('Update user Failed!');
                 } else {
-                  self.props.navigation.navigate('HomeScreen');
+                  self.props.navigation.navigate('Home');
                 }
             })
         }
@@ -145,9 +144,6 @@ Sendbird provides you with different types of channel:
 
 In our app we will use group channel.
 
-Here we listed some users which are already registred.
-
-![Image of SendBird Dashboard](/assets/article_images/2018-02-16-sendbird-for-building-react-native-messaging-apps/friendlist.png)
 
 ``` javascript
 
@@ -185,7 +181,12 @@ export default class HomeScreen extends Component<Props> {
 }
 
 ```
-let's  write our function _.joinChannel()
+Here we listed some users which are already registred.
+
+![Image of SendBird Dashboard](/assets/article_images/2018-02-16-sendbird-for-building-react-native-messaging-apps/friendlist.jpg)
+
+
+Let’s define our function `joinChannel()` in order to create a channel with two members (1-to-1 messaging).
 
 ``` javascript
  _joinChannel(receiverId) {
@@ -202,6 +203,111 @@ let's  write our function _.joinChannel()
   }
 
 ```
+* **createChannelWithUserIds()**:  is a function Called to create  a new channel. You should pass two user IDs or your  opponent ID. It aims at returning a plain JavaScript object describing the channel.
+
+The best part about this, is that you can pass information by passing additional arguments such as name, coverUrl,
+data, customType...
+
+
+See [SendBird Docs](https://docs.sendbird.com/javascript#group_channel_one_to_one_chat) for more informations.
+
+Let's chat!
+---
+Now for the main dish, we're going to create our chat room.
+
+First step, we need to create a chat UI component.
+
+You can build your own chat UI or you can use some open source libraries. 
+Here we will use [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat) for our chat UI. We used this library for our project. In general, it's not bad but we have found some issues.
+
+```javascript
+
+import React, { Component } from 'react';
+import { View }  from  'react-native';
+import { Container } from 'native-base';
+import { GiftedChat, Bubble, LoadEarlier } from 'react-native-gifted-chat';
+import SendBird from 'sendbird';
+
+import styles from './chatScreen.css';
+
+type Props = {};
+export default class ChatScreen extends Component<Props> {
+  state= {
+     messages: [],
+  }
+  render() {
+    const bubble = (props) => (
+      <Bubble
+        {...props}
+        wrapperStyle={styles.wrapperStyles}
+      />
+    );
+    const composer = (props) => (
+      <Composer
+        {...props}
+        multiline
+        textInputStyle={styles.composerStyles}
+      />
+    );
+    const loadEarlier = ((props) => {
+      if (_.isEmpty(this.state.messages)) {
+        return (
+          <LoadEarlier
+            {...props}
+            label="Start a conversation"
+          />
+        );
+      }
+      return null;
+    });
+    return (
+      <Container>
+          <GiftedChat
+            messages={this.state.messages}
+            renderBubble={bubble}
+            loadEarlier
+            renderLoadEarlier={loadEarlier}
+            isAnimated
+            keyboardShouldPersistTaps="never"
+            onSend={(messages) => this.onSend(messages)}
+            user={{
+              _id: currentUser.userId,
+              avatar: currentUser.avatar,
+            }}
+            showUserAvatar
+          />
+      </Container>
+    );
+  }
+}
+```
+Our chat UI component is ready now!
+
+![Image of SendBird Dashboard](/assets/article_images/2018-02-16-sendbird-for-building-react-native-messaging-apps/chatBox.png)
+
+At this stage, we are ready to sent messages  and load created conversations.
+
+let's  send our first message. At this step, we are going to create a function  named `onSend()`.
+
+
+
+```javascript 
+onSend(messages = []) {
+  const handle = this;
+  const sb  = SendBird.getInstance();
+  const channel =  this.props.state.params.channel;
+  this.setState((previousState) => {
+    channel.sendUserMessage(messages[0].text, (response, error) => {
+      if (!error) {
+        // handle.getChannelMetaData(channel);
+      }
+    });
+    return { messages: GiftedChat.append(previousState.messages, messages) };
+  });
+}
+```
+
+
 ```javascript 
 
 import React, { Component } from 'react';
@@ -214,7 +320,7 @@ type Props = {};
 
 export default class ChatScreen extends Component<Props> {
   state= {
-     messageList: [],
+     messages: [],
   }
   componentDidMount(){
     const { channel }  = this.props.navigation.state.params;
@@ -223,14 +329,14 @@ export default class ChatScreen extends Component<Props> {
   getChannelMetaData(channel) {
     if (channel) {
       const self = this;
-      const messageListQuery = channel.createPreviousMessageListQuery();
-      messageListQuery.load(30, true, (messageList, error) => {
+      const messagesQuery = channel.createPreviousMessageListQuery();
+    
+      messagesQuery.load(30, true, (messages, error) => {
         if (error) {
           console.error(error);
         }
-        console.log(messageList)
         this.setState({ 
-          messageList,
+          messages,
         });
       });
     }
@@ -238,9 +344,7 @@ export default class ChatScreen extends Component<Props> {
   }
   render() {
     return (
-      <Container>
-         
-      </Container>
+      //some code
     );
   }
 }
@@ -249,7 +353,7 @@ export default class ChatScreen extends Component<Props> {
 
 By providing its own Event Handlers, the SendBird SDK allows you to track events occuring within channels or devices such as typing , read receipts and more.
 
-
+<!--A user automatically receives all messages from the group channels that they are a member of.-->
 
 Conclusion
 ---
