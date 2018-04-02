@@ -7,6 +7,9 @@ categories: react
 tags: react react-native es6 javascript sendBird
 image: /assets/article_images/2016-05-04-create-your-own-download-manager/e.jpg
 ---
+![SendBird for building React Native messaging apps](/assets/article_images/2018-02-16-sendbird-for-building-react-native-messaging-apps/react-native-sendbird.png)
+
+
 Sending messages with apps has become a worldwide top use on mobile device and  messaging applications have became more ubiquitous.
 
 In this blog post, we will share with you our experience with messaging applications.
@@ -25,7 +28,7 @@ First you'll need to create a new SendBird application in the dashboard.
 
 Installation
 ---
-In your  react-native project folder, you need to run
+In your React Native project folder, you need to run
 
 ```npm install sendbird --save```
 
@@ -217,8 +220,8 @@ Now for the main dish, we're going to create our chat room.
 
 First step, we need to create a chat UI component.
 
-You can build your own chat UI or you can use some open source libraries. 
-Here we will use [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat) for our chat UI. We used this library for our project. In general, it's not bad but we have found some issues.
+In general, we can create our own chat UI our selves using simply React Native library. Also, there are a quite large amount of libraries dedicated to solve this issue themseves. For example here, we used [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat) for our project.
+Nevertheless, using this library would be more useful, it might also cause some recoverable problems UI and so on ...
 
 ```javascript
 
@@ -287,9 +290,12 @@ Our chat UI component is ready now!
 
 At this stage, we are ready to sent messages  and load created conversations.
 
-let's  send our first message. At this step, we are going to create a function  named `onSend()`.
+Let's send our first message!
 
+SendBird SDK provides you with methods to send messages in an entered channel such as `sendUserMessage()` and `sendFileMessage()`.
 
+* **sendUserMessage()**: used to send text messages.
+* **sendFileMessage()**: used to send binary messages.
 
 ```javascript 
 onSend(messages = []) {
@@ -306,7 +312,9 @@ onSend(messages = []) {
   });
 }
 ```
+You could load conversation by creating a query using `createPreviousMessageListQuery()`, this instance loads the most recent n messages.
 
+**Note:**  n is a fixed number used to query a set number of previous messages.
 
 ```javascript 
 
@@ -331,7 +339,7 @@ export default class ChatScreen extends Component<Props> {
       const self = this;
       const messagesQuery = channel.createPreviousMessageListQuery();
     
-      messagesQuery.load(30, true, (messages, error) => {
+      messagesQuery.load(50, true, (messages, error) => {
         if (error) {
           console.error(error);
         }
@@ -351,10 +359,15 @@ export default class ChatScreen extends Component<Props> {
 
 ```
 
-By providing its own Event Handlers, the SendBird SDK allows you to track events occuring within channels or devices such as typing , read receipts and more.
+By providing its own Event Handlers, the SendBird SDK allows you to track events occuring within channels or devices such as typing, read receipts and more. It is highly advisable you walk the extra mile and discover what this rich SDK has to offer yet.
 
-<!--A user automatically receives all messages from the group channels that they are a member of.-->
+Learn more about [SendBird Event Handler](https://docs.sendbird.com/javascript#event_handler).
 
+ 
 Conclusion
 ---
-  
+This post guides you through the preliminary steps of setting up SendBird in your own React Native app.
+I hope you found this article useful to kick off learning how to add real-time chat to any React Native app with speed and efficiency.
+
+Finally, if you have a super robust SDK, you don't need to reinvent the wheel! 
+
