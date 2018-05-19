@@ -5,7 +5,6 @@ author: sabrine
 date:   2018-04-02 18:48:00
 categories: react
 tags: react react-native es6 javascript sendBird
-image: /assets/article_images/2016-05-04-create-your-own-download-manager/e.jpg
 ---
 ![SendBird for building React Native messaging apps](/assets/article_images/2018-04-02-sendbird-for-building-react-native-messaging-apps/react-native-sendbird.png)
 
