@@ -23,7 +23,7 @@ Pour vous dire à quel point nous aimons et croyons au remote.
 # Question à l'envers : Pourquoi un bureau ?
 Chez EMIKETIC, nous tâchons d'avoir une culture de la réflexion bien forgée autour de la remise en question des idées préconçues, critiques et arguments à l'appui. A chaque _devrait_ nous ripostons avec un _pourquoi_.
 
-Quand on y pense, pourquoi est-ce qu'une équipe de créateurs de logiciels doit-elle se retrouver dans un espace physique pour accomplir un trail qui est intrinsèquement de nature virtuelle ?
+Quand on y pense, pourquoi est-ce qu'une équipe de créateurs de logiciels doit-elle se retrouver dans un espace physique pour accomplir un travail qui est intrinsèquement de nature virtuelle ?
 
 ## La ponctualité est dans l'efficience et l'efficacité
 
