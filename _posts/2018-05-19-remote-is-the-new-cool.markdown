@@ -27,7 +27,7 @@ Quand on y pense, pourquoi est-ce qu'une équipe de créateurs de logiciels doit
 
 ## La ponctualité est dans l'efficience et l'efficacité
 
-Contraintes de ponctualité d'horaire de travail, pointage, comptabilité d'heures, obligation de présence sont tous des symptômes d'une organisation avec une culture défaillante ou absente, une crise de confiance et des process battis sur la quête illusoire de contrôle.
+Contraintes de ponctualité d'horaire de travail, pointage, comptabilité d'heures, obligation de présence sont tous des symptômes d'une organisation avec une culture défaillante ou absente, une crise de confiance et des process battis sur la quête illusoire du contrôle.
 
 Cette affirmation est bien entendue formulée dans le cadre d'une agence d'activité et taille similaire aux notre. Mais il est assez simple de tirer le même constat pour des organisations de taille bien plus grande. La littérature et l'industrie [regorgent d'exemples full-remote](https://zapier.com/blog/companies-hiring-remote-workers/) de compagnies dans les TIC (et autres activités) de grande, voire très grandes tailles à l'instar de [Hubstaff](https://hubstaff.com/remote_work?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier), qui ne cherchent pas nécessairement à exercer le contrôle.
 
