@@ -12,7 +12,7 @@ Ne soyons pas _has been_ : Travailler en remote, ou télétravail, n'est plus un
 
 Ayant débuté comme un mouvement _millenial_, ensuite _nomad_, aujourd'hui le remote est une norme bien établie aussi bien dans le monde du tech que d'autres domaines variés tels que la création ou les NGOs.
 
-Cet article reprend quelques éléments de réflexion sur notre expérience avec le remote. Il s'agit avec des opinions assez engagées sur le sujet du remote et la façon d'organiser une équipe de concepteurs logiciels en général.
+Cet article reprend quelques éléments de réflexion sur notre expérience avec le remote. Il s'agit d'un article avec des opinions assez engagées sur le sujet du remote et la façon d'organiser une équipe de concepteurs logiciels en général.
 
 #### __Contexte__
 EMIKETIC est aujourd'hui une équipe d'une dizaine de personnes réellement semi-remote. Par choix ou par convenance, la moitié de notre staff dont 2 team-leads et un account manager, travaillent de chez eux en quasi full-time. Tout en étant le dirigeant de la compagnie, je travaille moi-même souvent jusqu'à une semaine par mois depuis la maison.
