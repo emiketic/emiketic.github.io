@@ -38,7 +38,7 @@ Les process sont et doivent toujours être de mise, mais cibler ponctuellement l
 Toujours dans le même sillage, il est préférable de réfléchir en termes d'effort que de temps. Il s'agit d'ailleurs d'une [nuance fondamentale dans la méthodologie Agile](https://www.atlassian.com/agile/project-management/estimation).
 Cela ne veut pas dire qu'il ne faut pas comptabiliser le temps. Mais cela doit émaner d'une volonté opérationnelle de mieux exécuter un projet, améliorer un process ou prévenir des saturations de planning des équipes de développements. C'est d'ailleurs l'une des raisons pour laquelle nous avons récemment investi dans la suite [Harvest](https://www.getharvest.com/) et [Forecast](https://forecastapp.com/) (ceci sera le sujet d'un autre article sur la planification)
 
-Le temps est un outil essentiel pour optimiser rentabilité. Nous vendons du temps, et nous réalisons des bénéfices quand le temps est amoindri par l'efficience de nos développeurs. Tenter de contrôler leur temps afin d'être aligné avec une _norme_ autoproclamée dont personne ne connaît ni la raison, ni l'auteur, ni l'origine, revient à courir après des moulins à vent.
+Le temps est un outil essentiel pour optimiser la rentabilité. Nous vendons du temps, et nous réalisons des bénéfices quand le temps est amoindri par l'efficience de nos développeurs. Tenter de contrôler leur temps afin d'être aligné avec une _norme_ autoproclamée dont personne ne connaît ni la raison, ni l'auteur, ni l'origine, revient à courir après des moulins à vent.
 
 Optimisons l'efficience, afin que l'effort compresse le temps.
 
