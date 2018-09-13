@@ -1,34 +1,36 @@
 ---
 layout: post
-title:  "Create your own download manager using Node.js"
+title: 'Create your own download manager using Node.js'
 author: mustapha
-date:   2016-05-04 11:21:25
+date: 2016-05-04 11:21:25
 categories: nodejs
 tags: nodejs downloads albums javascript
 image: /assets/article_images/2016-05-04-create-your-own-download-manager/e.jpg
 ---
 
 ---
+
 You are about to create a download manager, which queues,
 starts and repeats over a list of downloadable content.
 
 The example used is a download manager for albums of images.
 
 ## The Rule
+
 Album downloads are queued. They are not simultaneous, and this save us from
 server overload.
 
 ## The Downloader object
+
 Downloader is a singleton class, instantiated by the view component to listen
 for events.
 
-{% highlight javascript %}
-import EventEmitter from 'events'
+```javascript
+import EventEmitter from 'events';
 class DownloadEmitter extends EventEmitter {}
-{% endhighlight %}
+```
 
-
-{% highlight javascript %}
+```javascript
 export default class Downloader {
   constructor() {
     this.downloadPath = 'PATH'
@@ -49,7 +51,7 @@ export default class Downloader {
   }
   ...
 }
-{% endhighlight %}
+```
 
 In the constructor, we create the folder for downloads, initialize EventEmitter, etc.
 
@@ -60,27 +62,28 @@ Thanks to EventEmitter, Donwloader will process those variables to our views.
 Users will be happy to see the UI state changing because they only trust what they see.
 
 ### The Queue vs The data
+
 The queue will hold albums users are going to download. Once donwloaded,
 an album is removed from the queue.
 
 Data can hold everything. But for simplicity sake, we represent it this way.
 
-{% highlight json %}
+```json
 {
-  albums: [
+  "albums": [
     {
-      id: 1,
-      images: [
-        { url: 'http://i.imgur.com/aWaZqVs.jpg' },
+      "id": 1,
+      "images": [
+        { "url": "http://i.imgur.com/aWaZqVs.jpg" },
         ...
       ]
-    }
+    },
     ...
   ]
 }
-{% endhighlight %}
+```
 
-{% highlight javascript %}
+```javascript
 let queue = {}
 
 getAlbum(index) {
@@ -110,7 +113,7 @@ shiftQueue() {
   let album = this.getAlbum()
   delete queue[album.id]
 }
-{% endhighlight %}
+```
 
 Callback (cb) is a function parameter to execute when we are done with queueing.
 Callback can perform for example, UI update. Say, 'Waiting...'
@@ -126,7 +129,7 @@ In this section, we query the server for images, write them on disk, and move on
 
 Let's start with download behaviour.
 
-{% highlight javascript %}
+```javascript
 downloadRequestWithRetry(options, retry, started, progressed, finished) {
   let self = this
   var filename = (options.id).toString()
@@ -160,7 +163,7 @@ downloadRequestWithRetry(options, retry, started, progressed, finished) {
   })
   .pipe(writeStream)
 }
-{% endhighlight %}
+```
 
 I know it is a long method. But is it not simple enough?
 First thing that catch your attention is the name of the method.
@@ -175,7 +178,7 @@ Finally, 'data' event is triggered as the download progresses.
 
 We need a starting point for our downloads. It looks this way:
 
-{% highlight javascript %}
+```javascript
 downloadNext() {
   let self = this
 
@@ -219,7 +222,7 @@ downloadNext() {
     )
   })
 }
-{% endhighlight %}
+```
 
 We carefully notice the emitter part.
 We emit an events when we start downloading an album, to switch from waiting
@@ -234,7 +237,7 @@ main download action over the queue object.
 You will notice that we also used underscore helpers to check if our queue object is empty.
 So don't forget to import it.
 
-{% highlight javascript %}
+```javascript
   donwloadQueuedAction() {
     const self = this
     if(isDownloading) {
@@ -254,9 +257,10 @@ So don't forget to import it.
       self.downloadNext()
     }
   }
-{% endhighlight %}
+```
 
 ## Conclusion
+
 We talked about components and views a bit. We could have used React or Vue.js, two
 awesome libraries for constructing views. Maybe we will add the UI part in the future.
 

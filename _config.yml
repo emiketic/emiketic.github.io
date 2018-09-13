@@ -57,14 +57,14 @@ authors:
 
   nader:
     name: Nader Toukabri
-    bio: "Some sort of software engineer."
-    image: "images/authors/mehdi.jpg"
+    bio: "Software Engineer, Web and Mobile Developer, Technical Lead."
+    image: "https://nader.tech/picture.png"
     github: "https://github.com/naderio"
     website: "https://nader.tech/"
-    twitter: "https://twitter.com/naderbri"
 
   oumayma:
     name: Oumayma Azouz
+    bio: "Software Engineer, Web and Mobile Developer (React, Redux, React Native)"
     image: "images/authors/oumayma.jpg"
     bio: "React, Redux & Meteor developer. JS girl, ISSATSo & Junior Entreprise graduate"
 

@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Server Side Pagination, using React, Redux and Ant Design"
+title: 'Server Side Pagination, using React, Redux and Ant Design'
 author: oumayma
-date:   2018-02-27 11:20:00
+date: 2018-02-27 11:20:00
 categories: react
 tags: react redux ant-design
 ---
@@ -25,14 +25,13 @@ In our blog post, we are exposing two different solutions :
 
 At EMIKETIC, we use [React](https://reactjs.org/) with the [Redux](https://redux.js.org/) architecture combined with [Ant Design](https://ant.design/). We will be showcasing this post with this stack along with a example loading users from a `Restful` API.
 
-Let's dive in!
----
+## Let's dive in!
 
 As the Redux mantra prescribes it, all the application state is stored as a single object in a store. First of all, let's define a sub-state we will call `User` ( refers to user component) in order to store rendered data and pagination states.
 
 **User component substate**
-``` javascript
 
+```javascript
 const INDEX_PAGE_SIZE_DEFAULT = 50;
 const INDEX_PAGE_SIZE_OPTIONS = [5, 10, 20, 30, 50, 100];
 
@@ -48,8 +47,7 @@ state = {
 };
 ```
 
-First Approach: Server-side pagination
----
+## First Approach: Server-side pagination
 
 This approach is used only when the API supports sending pagination parameters to receive a much smaller amount of data.
 Using Redux, we have to define action types, action creators and thunks to make it all happen.
@@ -63,16 +61,16 @@ const fetchIndexRequest = () => {
   return {
     type: USER_INDEX_REQUEST,
   };
-}
+};
 
 // USERS RETREIVED WITH SUCCESS
 const USER_INDEX_SUCCESS = 'USER_INDEX_SUCCESS';
-const fetchIndexSuccess = (payload) => {
+const fetchIndexSuccess = payload => {
   return {
     type: USER_INDEX_SUCCESS,
     data: payload,
   };
-}
+};
 
 // FAILED TO RETREIVE USERS
 const USER_INDEX_FAILURE = 'USER_INDEX_FAILURE';
@@ -80,7 +78,7 @@ const fetchIndexFailure = () => {
   return {
     type: USER_INDEX_FAILURE,
   };
-}
+};
 
 // THUNK ACTION CREATOR TO FETCH USERS
 function $fetchIndex() {
@@ -93,34 +91,39 @@ function $fetchIndex() {
       `${endpoint}/users?${serializeQuery({
         per_page: meta.pageSize,
         page: meta.page - 1,
-      })}`)
-      .then((result) =>
-        dispatch(fetchIndexSuccess({
-          data: result.users,
-          meta: {
-            page: 1 + result.start / result.limit,
-            pageSize: result.limit,
-            pageTotal: Math.ceil(result.total / result.limit),
-            total: result.total,
-          },
-        })))
-      .catch((error) => dispatch(fetchIndexFailure(error)));
+      })}`
+    )
+      .then(result =>
+        dispatch(
+          fetchIndexSuccess({
+            data: result.users,
+            meta: {
+              page: 1 + result.start / result.limit,
+              pageSize: result.limit,
+              pageTotal: Math.ceil(result.total / result.limit),
+              total: result.total,
+            },
+          })
+        )
+      )
+      .catch(error => dispatch(fetchIndexFailure(error)));
   };
 }
 ```
+
 with :
 
 ```javascript
 function serializeQuery(query) {
   return Object.keys(query)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`)
     .join('&');
 }
 ```
+
 **Action Type and Action Creators for pagination**
 
 ```javascript
-
 // SINGLE ACTION TYPE TO CHANGE META DATA
 const USER_INDEX_META = 'USER_INDEX_META';
 
@@ -166,6 +169,7 @@ function $page(page = 1) {
 ```
 
 **Reducer**
+
 ```javascript
 function reducer(
   state = {
@@ -178,7 +182,7 @@ function reducer(
       total: 0,
     },
   },
-  action,
+  action
 ) {
   switch (action.type) {
     case USER_INDEX_META:
@@ -203,19 +207,20 @@ function reducer(
   }
 }
 ```
+
 **Wiring to the view**
 
 We used all defined actions in a react component called `UserIndexView` connected to the store thanks to `react-redux` npm module.
 In this component, we used the component [Table](https://ant.design/components/table/) from `Ant Design` which contains the configurable property [Pagination](https://ant.design/components/pagination/). The properties of `pagination` responsible of changing the pagination state are:
 
-* **onShowSizeChange** : the action creator `$pageSize` is dispatched once the pageSize is changed.
+- **onShowSizeChange** : the action creator `$pageSize` is dispatched once the pageSize is changed.
 
-* **onChange**: the action creator `$page` is dispatched when the page number is changed.
+- **onChange**: the action creator `$page` is dispatched when the page number is changed.
 
-* **pageSizeOptions**: is an array that specifies the sizeChanger options. In our example we have `pageSizeOptions = [5, 10, 20, 30, 50, 100]`.
+- **pageSizeOptions**: is an array that specifies the sizeChanger options. In our example we have `pageSizeOptions = [5, 10, 20, 30, 50, 100]`.
 
-
-```javascript
+{% raw %}
+```jsx
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table, Avatar, Icon, Input, Button } from 'antd';
@@ -287,10 +292,9 @@ class UserIndexView extends Component {
 }
 export default Connector(UserIndexView);
 ```
+{% endraw %}
 
-
-Second Approach:  Client-side pagination
----
+## Second Approach: Client-side pagination
 
 In this part, we are going to mention just the trick that differentiates the `Client-side pagination` from `Server-side pagination`.
 As the API does not supply the filtering parameters to send from the client and loads instead the whole data, we will need to load all the data and update pagination options based on our stored state and dispatch actions using Redux.
@@ -298,6 +302,7 @@ As the API does not supply the filtering parameters to send from the client and 
 In the main component `UserIndexView` already defined, we definitely have no differences, just as we don't in all actions creators. There are only two small differences in `thunk action creator` and `reducer` which will be mentioned in the two pieces of code:
 
 **Thunk action creator**
+
 ```javascript
 ...
 return fetch(`${endpoint}/users`)
@@ -311,14 +316,14 @@ return fetch(`${endpoint}/users`)
         total: result.total,
       },
     })))
-...    
+...
 ```
 
 **Reducer**
 
 ```javascript
 ...
-case USER_INDEX_SUCCESS:      
+case USER_INDEX_SUCCESS:
   return {
     ...state,
     data,
@@ -329,10 +334,9 @@ case USER_INDEX_SUCCESS:
       total: data.length,
     },
   };
-...  
+...
 ```
 
-Conclusion
----
+## Conclusion
 
 The purpose of this blog post is to highlight the importance of using pagination even if the restful API we are using does not provide it, and the important role that Redux plays in managing and organizing the whole mechanism.

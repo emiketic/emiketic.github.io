@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Hands On with the New Meteor 1.3"
+title: 'Hands On with the New Meteor 1.3'
 author: mehdi
-date:   2016-04-02 12:09:00
+date: 2016-04-02 12:09:00
 categories: meteor
 tags: meteor npm es2015 es6 mochajs
 image: /assets/article_images/2016-04-01-hands-on-with-meteor-1-3-release/emiketic-hands-on-meteor-1-3.jpg
@@ -24,7 +24,6 @@ Even better, you can package your own modules similarly to NPM modules for usage
 
 [The Meteor Chef] has written an excellent [post] on the matter.
 
-
 # Native Support for NPM Modules and Package Management
 
 One of the pains of former versions of Meteor, is that you often needed to rely on third-party Meteor packages such as [meteorhacks:npm]
@@ -32,9 +31,10 @@ in order to integrate NPM packages that you sometimes needed just for client fun
 From a syntactical point of view, this approach isn't really easy and clean to maintain. But for the 1.3 release, handling
 NPM in your Meteor app is as straightforward as managing any other regular NPM based setup. With your `package.json`
 placed at the root of the project, you can simply run things like:
-{% highlight bash %}
-    npm install --react
-{% endhighlight%}
+
+```sh
+npm install --react
+```
 
 As Matt Debergalis brought it up, enabling developers with the flexibility to chose between Meteor or NPM packages is particularly handy if you're integrating
 technologies that are under rapid development, such us React. In our case, this proved to be quite helpful.
@@ -45,7 +45,7 @@ official NPM source.
 
 It is also possible now to test your modules in 1.3 as you would for NPM packages. This is discussed in the next section.
 
-*And hey! Follow us on the Facebook channel [React Tunisia] for more updates about React :)*
+_And hey! Follow us on the Facebook channel [React Tunisia] for more updates about React :)_
 
 # Testings and BDD
 
@@ -56,16 +56,16 @@ This is really exciting news because there will be no need to look for fragmente
 Using [Mocha] or the testing driver of your choice, you can test both client and server side with reporting capabilities in the
 browser:
 
-{% highlight javascript %}
-    meteor test --driver-package avital:mocha --port 3100
-{% endhighlight %}
+```sh
+meteor test --driver-package avital:mocha --port 3100
+```
 
 From now on, Meteor will support:
 
-* Unit testings, typically for modules and small pieces of code
-* Integration tests for cross-modules and cross-components. This makes it simpler to implement BDD practices within a continuous integration context
-* Acceptance tests, or "end-to-end" test where you can leverage tools such as [React Test Utilities] to manage UI tests on the client side
-* Load testing for performance and behaviour under stress loads
+- Unit testings, typically for modules and small pieces of code
+- Integration tests for cross-modules and cross-components. This makes it simpler to implement BDD practices within a continuous integration context
+- Acceptance tests, or "end-to-end" test where you can leverage tools such as [React Test Utilities] to manage UI tests on the client side
+- Load testing for performance and behaviour under stress loads
 
 More resources can be found at the official [Meteor guide] for tests.
 
@@ -82,23 +82,23 @@ for Phonegap and Crodova drivers for trans-coded Meteor mobile web applications.
 and faster build times.
 
 # Conclusion
+
 At [EMIKETIC], we opted for Meteor almost a year ago as the platform of choice for real-time and reasonably scalable web-applications.
 We've been taking a close look at each new update the platform had to offer, and had the chance to suffer several of its limitations along the way.
 Most of these were due to the lack of support of Meteor to some indispensable tools and libraries found in the JS World.
 
 Luckily, 1.3 came to tackle this.
 
-
-[Meteor 1.3]: http://info.meteor.com/blog/announcing-meteor-1.3
-[EMIKETIC]: http://www.emiketic.com
+[meteor 1.3]: http://info.meteor.com/blog/announcing-meteor-1.3
+[emiketic]: http://www.emiketic.com
 [keynote]: https://youtu.be/7d0xTR-eYh0
-[Matt Debergalis]: https://twitter.com/debergalis
+[matt debergalis]: https://twitter.com/debergalis
 [meteorhacks:npm]: https://github.com/meteorhacks/npm
-[React Tunisia]: https://www.facebook.com/ReactJSTun/?fref=ts
-[The Meteor Chef]: https://themeteorchef.com
+[react tunisia]: https://www.facebook.com/ReactJSTun/?fref=ts
+[the meteor chef]: https://themeteorchef.com
 [post]: https://themeteorchef.com/blog/meteor-1-3-from-a-20-000-foot-view/
-[Xolv.io]: https://forums.meteor.com/t/velocity-update-xolv-io-are-handing-meteor-testing-back-to-the-mdg/13117
-[Velocity]: https://github.com/meteor-velocity/velocity
-[Mocha]: https://mochajs.org/
-[Meteor guide]: http://guide.meteor.com/testing.html
-[React Test Utilities]: https://facebook.github.io/react/docs/test-utils.html
+[xolv.io]: https://forums.meteor.com/t/velocity-update-xolv-io-are-handing-meteor-testing-back-to-the-mdg/13117
+[velocity]: https://github.com/meteor-velocity/velocity
+[mocha]: https://mochajs.org/
+[meteor guide]: http://guide.meteor.com/testing.html
+[react test utilities]: https://facebook.github.io/react/docs/test-utils.html
