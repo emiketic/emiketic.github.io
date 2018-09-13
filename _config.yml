@@ -119,5 +119,13 @@ defaults:
     values:
         layout: 'post'
 
-
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - node_modules/*
+  - .sass-cache
+  - _dist
+  - vendor
+  - screenshot.png

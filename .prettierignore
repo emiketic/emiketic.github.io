@@ -5,5 +5,4 @@ node_modules
 *.log
 _dist/
 vendor/
-*.sublime-*
-.DS_Store
+old/
