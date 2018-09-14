@@ -220,6 +220,7 @@ In this component, we used the component [Table](https://ant.design/components/t
 - **pageSizeOptions**: is an array that specifies the sizeChanger options. In our example we have `pageSizeOptions = [5, 10, 20, 30, 50, 100]`.
 
 {% raw %}
+
 ```jsx
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -292,6 +293,7 @@ class UserIndexView extends Component {
 }
 export default Connector(UserIndexView);
 ```
+
 {% endraw %}
 
 ## Second Approach: Client-side pagination

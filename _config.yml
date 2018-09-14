@@ -33,39 +33,39 @@ author:
 authors:
   mustapha:
     name: Mustapha Turki
-    image: "images/authors/mustapha.jpg"
+    image: "/images/authors/mustapha.jpg"
     website: "https://stoufa88.github.io"
 
   mehdi:
     name: Mehdi Mahmoudi
     bio: "Aka Medi The Jedi. Electrical engineer and scuba diving instructor. Loves Meteor, React and Rails. Agency founder. Startup co-founder and CTO."
-    image: "images/authors/mehdi.jpg"
+    image: "/images/authors/mehdi.jpg"
     website: "https://www.linkedin.com/in/mehdimahmoudi/"
     twitter: "https://twitter.com/MehdiMahmoudi"
 
   chourouk:
     name: Chourouk Mrad
     bio: "Full-stack Ruby on Rails/ Javascript developer. Fond of Ruby on Rails, React and React Native"
-    image: "images/authors/chourouk.jpg"
+    image: "/images/authors/chourouk.jpg"
     website: "http://www.emiketic.com"
 
   sabrine:
     name: Sabrine Abdelghani
     bio: "Full-stack JavaScript developer. JS girl. Fond of Meteor, React and React Native"
-    image: "images/authors/sabrine.jpg"
+    image: "/images/authors/sabrine.jpg"
     website: "https://twitter.com/sabrine_abdgani"
 
   nader:
     name: Nader Toukabri
-    bio: "Software Engineer, Web and Mobile Developer, Technical Lead."
-    image: "https://nader.tech/picture.png"
+    bio: "Software Engineer, Web and Mobile Developer, Technical Lead"
+    image: "https://nader.tech/picture.jpg"
     github: "https://github.com/naderio"
     website: "https://nader.tech/"
 
   oumayma:
     name: Oumayma Azouz
     bio: "Software Engineer, Web and Mobile Developer (React, Redux, React Native)"
-    image: "images/authors/oumayma.jpg"
+    image: "/images/authors/oumayma.jpg"
     bio: "React, Redux & Meteor developer. JS girl, ISSATSo & Junior Entreprise graduate"
 
 

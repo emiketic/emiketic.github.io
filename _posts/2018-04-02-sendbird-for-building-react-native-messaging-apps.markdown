@@ -45,6 +45,7 @@ The first thing we’re going to need is a screen where the user can enter a use
 Let's start creating a Sign in screen:
 
 {% raw %}
+
 ```jsx
 import React, { Component } from 'react';
 
@@ -82,6 +83,7 @@ export default class LoginScreen extends Component<Props> {
   }
 }
 ```
+
 {% endraw %}
 
 In this tutorial, we will use email as UserID and nickname to be displayed beside each message we send.
@@ -153,6 +155,7 @@ SendBird provides you with different types of channel:
 In our app we will use a group channel.
 
 {% raw %}
+
 ```jsx
 import React, { Component } from 'react';
 
@@ -186,6 +189,7 @@ export default class HomeScreen extends Component<Props> {
   }
 }
 ```
+
 {% endraw %}
 
 Here we listed some users which are already registered.
@@ -226,6 +230,7 @@ In general, we can create our own chat UI our selves using simply React Native l
 While using this library can be useful, it may come with its own burden of integration and customization issues (feel free exploring the not-so-maintained source code behind it :) ).
 
 {% raw %}
+
 ```jsx
 import React, { Component } from 'react';
 import { View } from 'react-native';
@@ -270,6 +275,7 @@ export default class ChatScreen extends Component<Props> {
   }
 }
 ```
+
 {% endraw %}
 
 Our chat UI component is ready now!
