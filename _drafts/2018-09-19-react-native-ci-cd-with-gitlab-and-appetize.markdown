@@ -4,7 +4,7 @@ title: 'React Native Continuous Delivery with GitLab CI/CD and Appetize'
 author: nader
 date: 2018-09-19 00:00:00
 categories: react-native
-tags: react-native continuous-delivery tooling
+tags: react-native continuous-integration continuous-delivery tooling
 draft: true
 ---
 
@@ -12,7 +12,7 @@ At EMIKETIC, it is important for us to provide results as fast as possible and i
 
 Also as a service company, we're required to swiftly validate changes by fellow developers, QA officers, and/or clients.
 
-Automated and continuous delivery is therefore a critical component for us. Is is very feasible for web apps, but might be more challenging for mobile apps.
+[Automated and continuous delivery](https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd) is therefore a critical process for us. Is is very feasible for web apps, but might be more challenging for mobile apps.
 
 ## Our Approach to CI/CD
 
@@ -23,15 +23,16 @@ On most of our projects, our current approach to automated delivery is as follow
 - provide a link to downloadable build for users to install and run on their devices.
 
 This approach is better demonstrated by our [React Native Starter
-](https://github.com/emiketic/emiketic-starter-react-native).
-
-![Image of SendBird Dashboard](/assets/article_images/2018-09-19-react-native-ci-cd-with-gitlab-and-appetize/gitlab-ci-cd-pipeline.png)
+](https://github.com/emiketic/emiketic-starter-react-native), our de facto boilerplate for modular and robust React Native app.
 
 ### GitLab CI/CD
 
 [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) is probably one of most capable CI/CD engines out there, an it is a personal favorite.
 
-We use GitLab CI/CD descriptor (`.gitlab-ci.yml`) combined with a number of custom scripts and [Docker images](https://hub.docker.com/r/emiketic/)
+We use GitLab CI/CD descriptor (`.gitlab-ci.yml`) combined with a number of custom scripts and [Docker images](https://hub.docker.com/r/emiketic/). The resulting flow looks like follows:
+
+![Image of SendBird Dashboard](/assets/article_images/2018-09-19-react-native-ci-cd-with-gitlab-and-appetize/gitlab-ci-cd-pipeline.png)
+
 
 Having your code at GitLab is not a requirement since it is possible to mirror repository from other sources.
 
@@ -73,4 +74,4 @@ For more fine-grained control, we're looking into Google Drive among other suita
 
 ## What's next?
 
-Automated delivery is not complete while actual deployment to stores remain manual. To accomplish this we're looking into [fastlane](https://fastlane.tools/) .. a subject for another blog post.
+Continuous delivery is not complete while actual production build and deployment to stores remain manual. To accomplish this we're looking into [fastlane](https://fastlane.tools/) .. a subject for another blog post.
