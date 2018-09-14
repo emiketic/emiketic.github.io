@@ -11,15 +11,15 @@ At EMIKETIC, it is important for us to provide results as fast as possible and i
 
 Also as a service company, we're required to swiftly validate changes by fellow developers, QA officers, and/or clients.
 
-[Automated and continuous delivery](https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd) is therefore a critical process for us. Is is very feasible for web apps, but might be more challenging for mobile apps.
+[Automated and continuous delivery](https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd) is therefore a critical process for us. It is very feasible for web apps, but might be more challenging for mobile apps.
 
 ## Our Approach to CI/CD
 
 On most of our projects, our current approach to automated delivery is as follows:
 
-- use [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), a powerful continuous integration/delivery engine, to validate, test, build, and deploy any changes committed to codebase.
-- use [Appetize](https://appetize.io/), an "online web based iOS Simulators and Android Emulators", to demonstrate changed within the comfort of web browser.
-- provide a link to downloadable build for users to install and run on their devices.
+- Use [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), a powerful continuous integration/delivery engine, to validate, test, build, and deploy any changes committed to codebase.
+- Use [Appetize](https://appetize.io/), an "online web based iOS Simulators and Android Emulators", to demonstrate changes within the comfort of web browser.
+- Provide a link to downloadable build for users to install and run on their devices.
 
 This approach is better demonstrated by our [React Native Starter
 ](https://github.com/emiketic/emiketic-starter-react-native), our de facto boilerplate for modular and robust React Native app.
@@ -67,7 +67,7 @@ curl -u "${FTP_USERNAME}:${FTP_PASSWORD}" "ftp://${FTP_DOMAIN}${FTP_PATH}/${CI_C
 
 Where `CI_COMMIT_REF_SLUG` is a git reference (tag or branch) provided by GitLab CI/CD.
 
-This solution good enough for us even when security/access is a constraint (we use `.htaccess`).
+This solution is good enough for us even when security/access is a constraint (we use `.htaccess`).
 
 For more fine-grained control, we're looking into Google Drive among other suitable candidates like Dropbox, Amazon S3, ...
 
