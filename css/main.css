@@ -1,6 +1,10 @@
 @import url(uno.css);
 @import url(monokai.css);
 
+img {
+  max-width: 100%;
+}
+
 .author-avatar {
   max-width: 2em;
   height: auto;
