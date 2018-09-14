@@ -7,6 +7,8 @@ categories: react-native
 tags: react-native continuous-integration continuous-delivery tooling devops
 ---
 
+![React Native + GitLab CI/CD + Appetize](/assets/article_images/2018-09-19-react-native-ci-cd-with-gitlab-and-appetize/cover.png)
+
 At EMIKETIC, it is important for us to provide results as fast as possible and in a convenient and easy-to-use format.
 
 Also as a service company, we're required to swiftly validate changes by fellow developers, QA officers, and/or clients.
