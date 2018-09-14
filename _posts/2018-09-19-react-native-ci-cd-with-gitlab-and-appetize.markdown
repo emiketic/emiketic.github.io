@@ -30,7 +30,7 @@ This approach is better demonstrated by our [React Native Starter
 
 We use GitLab CI/CD descriptor (`.gitlab-ci.yml`) combined with a number of custom scripts and [Docker images](https://hub.docker.com/r/emiketic/). The resulting flow looks like follows:
 
-![Image of SendBird Dashboard](/assets/article_images/2018-09-19-react-native-ci-cd-with-gitlab-and-appetize/gitlab-ci-cd-pipeline.png)
+![GitLab CI/CD Pipeline](/assets/article_images/2018-09-19-react-native-ci-cd-with-gitlab-and-appetize/gitlab-ci-cd-pipeline.png)
 
 
 Having your code at GitLab is not a requirement since it is possible to mirror repository from other sources.
