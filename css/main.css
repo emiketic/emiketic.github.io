@@ -18,11 +18,12 @@ img {
 pre.highlight,
 .highlight pre {
   padding: 10px;
+  overflow: auto;
 }
 
 pre.highlight code,
 .highlight pre code {
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
 }
 
 .btn,
