@@ -57,17 +57,16 @@ Where `CI_COMMIT_SHA` is a git commit reference provided by GitLab CI/CD.
 
 ### Downloadable Build
 
-Providing the ability to download and install the app enables involved parties to properly validate the application in real world usage.
+Providing the ability to download and install the app enables involved parties to properly validate the application in real world usage. For now, this is only possible for Android (APK).
 
-As for now this is only valid for Android (APK).
-
-For this, we use a simplistic solution which is a shared hosting that we upload builds to using FTP, mainly with following command:
+To accomplish this requirement, we use a simplistic solution which is a shared hosting that we upload builds to using FTP, mainly with following command:
 
 ```sh
 curl -u "${FTP_USERNAME}:${FTP_PASSWORD}" "ftp://${FTP_DOMAIN}${FTP_PATH}/${CI_COMMIT_REF_SLUG}/" -T $TARGET
 ```
 
 Where `CI_COMMIT_REF_SLUG` is a git reference (tag or branch) provided by GitLab CI/CD.
+
 
 This solution is good enough for us even when security/access is a constraint (we use `.htaccess`).
 
